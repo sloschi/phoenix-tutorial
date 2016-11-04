@@ -18,17 +18,6 @@ defmodule HelloPhoenix.Router do
 
     get "/", PageController, :index
 
-    resources "/reviews", ReviewController 
+    resources "/users", UserController 
   end
-
-  scope "/admin", as: :admin do
-    pipe_through :browser
-
-    resources "/reviews", HelloPhoenix.Admin.ReviewController
-  end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", HelloPhoenix do
-  #   pipe_through :api
-  # end
 end
